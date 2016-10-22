@@ -7,12 +7,12 @@ static const char *fonts[] = {
 	"Tamsyn:size=20"
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
-static const char *normbgcolor = "#073642"; /* -nb option; normal background                 */
-static const char *normfgcolor = "#eee8d5"; /* -nf option; normal foreground                 */
-static const char *selbgcolor  = "#268bd2"; /* -sb option; selected background               */
-static const char *selfgcolor  = "#fdf6e3"; /* -sf option; selected foreground               */
-static const char *outbgcolor  = "#073642";
-static const char *outfgcolor  = "#eee8d5";
+static const char *colors[SchemeLast][2] = {
+	/*     fg         bg       */
+	[SchemeNorm] = { "#eee8d5", "#073642" },
+	[SchemeSel] = { "#fdf6e3", "#268bd2" },
+	[SchemeOut] = { "#eee8d5", "#073642" },
+};
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
 
